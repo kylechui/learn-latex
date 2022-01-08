@@ -1,5 +1,3 @@
-$x^2 = 2$.
-
 # Setting up a development environment
 Using the online website [Overleaf](https://www.overleaf.com/) is probably the
 easiest way to get started with LaTeX. 
