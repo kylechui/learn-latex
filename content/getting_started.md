@@ -78,7 +78,16 @@ making a title page using the `\maketitle` command.
 This final portion begins the actual document, using a document *environment*
 (more on that later). The section header does what you think it does.
 
-**Note:** LaTeX syntax uses backslashes `\` to demarcate what is regular text
-from what is a command.
+## Syntax
 
-**Note 2:** Environments are similar to HTML tags
+LaTeX syntax is relatively straightforward and has two basic components:
+* Commands: regular words pre-pended by a backslash `/`
+* Environments: code blocks that take the form
+
+```tex
+\begin{[environment name]}
+  % ...
+\end{[environment name]}
+```
+
+**Note:** Environments are similar to HTML tags
