@@ -15,14 +15,12 @@ Anything that is between two dollar signs `$` or escaped parentheses `\(` and
 $x^{2} - x - 1 = 0$
 ```
 would get rendered as 
-<img src="https://render.githubusercontent.com/render/math?math=x^2 - x - 1 =
-0"></img>.
+  <img src="assets/02-01.png"></img>.
 
 **Note:** Variables rendered in math mode will get special formatting and will
 look different from the same variable rendered in text mode. For example,
-observe the difference between 
-<img src="https://render.githubusercontent.com/render/math?math=x"></img> and
-<img src="https://render.githubusercontent.com/render/math?math=\text{x}"></img>.
+observe the difference between <img src="assets/x.png"></img> and <img
+src="assets/02-02.png"></img>.
 
 The characters `^` and `_` denote superscripts and subscripts, respectively. The
 curly braces after `^` or `_` denote that we are grouping them together
@@ -55,8 +53,7 @@ recommended), or escaped square brackets `\[` and `\]`. For example,
 ```
 would be rendered as
 <center>
-  <img src="https://render.githubusercontent.com/render/math?math=\displaystyle
-  a_2x^2 %2B a_1x %2B a_0 = \frac{1}{2}."></img>
+  <img src="assets/02-03.png"></img>
 </center>
 In particular, fractions, limits, summations, and integrals will exhibit
 different behavior.

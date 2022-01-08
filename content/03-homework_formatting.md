@@ -9,8 +9,7 @@ we could write:
 ```
 and it would render as
 <center>
-  <img
-  src="https://render.githubusercontent.com/render/math?math=\textbf{Problem\:1.}\:\text{Prove that the sum of two odd numbers is even.}"></img>
+  <img src="assets/03-01.png"></img>
 </center>
 
 <details>
@@ -41,7 +40,7 @@ The way LaTeX handles passing parameters to custom commands is via the following
 syntax:
 * In the declaration line, we see an optional `[n]` marker. This tells us that
   there are going to be <img
-  src="https://render.githubusercontent.com/render/math?math=n"></img>
+  src="assets/n.png"></img>
   parameters. 
 * Each of these parameters is referred to by what order it came in, using `#1`
   through `#n`.
@@ -77,8 +76,9 @@ solution to the above problem as follows:
   Therefore $m + n$ is even.
 \end{proof}
 ```
-
-[INSERT RENDERED IMAGE HERE]
+<center>
+  <img src="assets/03-02.png"></img>
+</center>
 
 ## Whitespace commands
 Here's a list of common whitespace commands that you might want to use:
