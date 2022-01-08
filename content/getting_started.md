@@ -22,7 +22,7 @@ what it does later) and try compiling it.
 \documentclass{article}
 
 \usepackage[margin=1in]{geometry}
-\usepackage{amssymb}
+\usepackage{amssymb, amsthm}
 \usepackage{enumitem}
 
 \title{First Document}
@@ -48,13 +48,14 @@ an article, and will suffice for most projects.
 
 ```tex
 \usepackage[margin=1in]{geometry}
-\usepackage{amssymb}
+\usepackage{amssymb, amsthm}
 \usepackage{enumitem}
 ```
 These next three lines import a variety of symbols and functionalities from
 packages in order to extend LaTeX's functionality.
 * The `geometry` package sets the margins of the page to be 1 inch on all sides.
-* The `amssymb` package imports a variety of math symbols.
+* The `amssymb` and `amsthm` packages import a variety of math symbols and
+  environments (more on this later).
 * The `enumitems` package allows you to embed bullet and numbered lists in your
   document.
 
@@ -75,8 +76,8 @@ making a title page using the `\maketitle` command.
 
 \end{document}
 ```
-This final portion begins the actual document, using a document *environment*
-(more on that later). The section header does what you think it does.
+This final portion begins the actual document, using a document environment. The
+section header does what you think it does.
 
 ## Syntax
 
