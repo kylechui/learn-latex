@@ -1,7 +1,6 @@
 # learn-latex
-This is a short series introducing the basics of LaTeX, hopefully well enough
-for the reader to be able to format basic documents, such as math/CS
-assignments.
+This is a short series introducing the basics of LaTeX, hopefully well enough so
+the reader can format basic documents, such as math/CS assignments.
 
 **Note: This is not meant to be a comprehensive tutorial, but rather a
 quick start guide!**
