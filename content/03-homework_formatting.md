@@ -80,6 +80,35 @@ solution to the above problem as follows:
   <img src="assets/03-02.png"></img>
 </center>
 
+## Typefaces (fonts, boldness, italics, etc.)
+There are a few different ways that you might want to format text for math
+applications:
+* Italics and boldface can both be applied using `\textit` or `\emph`, and
+  `\textbf`, respectively.
+
+An example of the above styles:
+
+<img src="assets/03-03.png"></img>
+
+and the corresponding code:
+```tex
+\emph{This is italics!} \textbf{This is bold!}
+```
+
+* There are also three main fonts that are useful to know (code samples below):
+  * `\mathbb` or "blackboard": Used to style sets like the reals, <img
+    src="assets/mathbb_R.png"></img>.
+  * `\mathscr` or "script": I only really use it for the power set, <img
+    src="assets/mathscr_P.png"></img>.
+  * `\mathcal` or "calligraphic": Laplace transform, big O notation, etc., <img
+    src="assets/03-04.png"></img>.
+
+They're all implemented in the same way as before, i.e. `\mathbb{R}`,
+`\mathscr{P}`, and `\mathcal{O}(n^2)`.
+
+**Note:** These last three fonts can only be applied in math/display mode, so be
+sure to remember your `$`!
+
 ## Whitespace commands
 Here's a list of common whitespace commands that you might want to use:
 * `\\` --- Starts a new line
