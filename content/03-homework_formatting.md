@@ -109,6 +109,9 @@ They're all implemented in the same way as before, i.e. `\mathbb{R}`,
 **Note:** These last three fonts can only be applied in math/display mode, so be
 sure to remember your `$`!
 
+**Note:** You'll need the `mathrsfs` package in order to use the `\mathscr`
+typeface.
+
 ## Whitespace commands
 Here's a list of common whitespace commands that you might want to use:
 * `\\` --- Starts a new line
