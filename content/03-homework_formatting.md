@@ -30,6 +30,42 @@ solution to the above problem as follows:
   <img src="assets/03-02.png"></img>
 </center>
 
+## Lists
+The two main ways to create lists in LaTeX are using the `enumerate` and
+`itemize` environments. The former is used to create "ordered" lists, whereas the
+latter is for "unordered" lists. By default, `enumerate` numbers off your items
+in the form `n.`, whereas `itemize` just creates a bulleted list. The syntax is
+as follows (and is the same for itemize):
+```tex
+\begin{enumerate}
+  \item % First item in the list
+  \item % Second item in the list
+  \item % And so on and so forth...
+\end{enumerate}
+```
+
+**Note:** By default, both `enumerate` and `itemize` will change the item prefix
+when you nest environments. For example, the `itemize` environment starts with
+solid bullets and then indents to empty bullet points when you nest
+environments. 
+
+If you prefer to use a different method for listing off your items, you may
+include an *optional* parameter to change the schema. Say you want to use
+letters instead of numbers:
+
+```tex
+\begin{enumerate}[label=\alph*)]
+  \item % This will be preceded by a)
+  \item % This will be preceded by b)
+  \item % And so on and so forth...
+\end{enumerate}
+```
+
+In this case the `\alph*` denotes the usage of lowercase letters, and the
+closing parenthesis is the literal closing parenthesis that appears in the list.
+Other naming commands include `\roman`(roman numerals) and `\arabic`(regular
+numbers).
+
 ## Typefaces (fonts, boldness, italics, etc.)
 There are a few different ways that you might want to format text for math
 applications:
