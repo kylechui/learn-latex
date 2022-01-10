@@ -82,7 +82,11 @@ section header does what you think it does.
 ## Syntax
 
 LaTeX syntax is relatively straightforward and has two basic components:
-* Commands: regular words pre-pended by a backslash `/`
+* Commands: regular words pre-pended by a backslash `\`
+  * Sometimes commands are parameter-less, such as `\alpha`, but other times
+    they can be passed multiple parameters like `\frac{1}{2}`
+  * In general, parameters are passed as follows:
+    `\commandName{param_1}{param_2}...{param_n}`.
 * Environments: code blocks that take the form
 
 ```tex
