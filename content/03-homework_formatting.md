@@ -1,6 +1,6 @@
 # How to set up LaTeX to do homework sets
 
-W## Problem numbering
+## Problem numbering
 One simple way to do this is to make use of the `\textbf` command (text bold
 face). It takes a parameter as input and renders it in bold face. For example,
 we could write:
@@ -11,56 +11,6 @@ and it would render as
 <center>
   <img src="assets/03-01.png"></img>
 </center>
-
-<details>
-<summary>Advanced setup</summary>
-
-Alternatively, you could also define a custom environment to handle writing your
-problem statements. The following code does just that, with an optional
-parameter of a problem number. Copy-paste this into your code before your
-`\begin{document}` line, but after all of your `\usepackage` statements.
-
-```tex
-\newenvironment{problem}[1]
-  {
-    \ifx &#1& \textbf{Problem. }
-    \else \textbf{Problem #1.} \fi
-  }
-  {
-  }
-```
-
-You don't need to worry too much about the if statement syntax, it just formats
-some spacing depending on whether or not you pass a problem number into it.
-Recall that environments always come in `\begin{env}` and `\end{env}` pairs.
-What the `\newenvironment` command does is run what's in the first set of curly
-braces as the `\begin` line, and the second set as the `\end` line.
-
-The way LaTeX handles passing parameters to custom commands is via the following
-syntax:
-* In the declaration line, we see an optional `[n]` marker. This tells us that
-  there are going to be <img
-  src="assets/n.png"></img>
-  parameters. 
-* Each of these parameters is referred to by what order it came in, using `#1`
-  through `#n`.
-
-We can then use
-
-```tex
-\begin{problem}{1}
-  Prove that the sum of two odd numbers is even.
-\end{problem}
-```
-to render the same text as we did before!
-
-**Note:** If you want to omit a particular parameter, you *shouldn't* omit the
-curly braces, i.e. you would write `\begin{problem}{}`.
-
-**Note:** While this might not be useful for this particular use case, it comes
-in handy when you need to use and re-use more complex code blocks.
-
-</details>
 
 ## Writing solutions
 For proofs classes, we use the `proof` environment provided by the `amsthm`
@@ -121,3 +71,75 @@ Here's a list of common whitespace commands that you might want to use:
 * `\newpage` --- Starts a new page
 * `\hspace{5pt}` --- Puts horizontal space on the page
 * `\vspace{20pt}` --- Puts vertical space on the page
+
+## Syntax sugar
+
+Oftentimes there are a few commands that are used frequently, that are a bit of
+a pain to type out every single time. Here we will define macros, or shortcuts,
+to help you focus on the math and not the syntax.
+
+### `\newcommand`
+
+You can define custom commands via `\newcommand`. The syntax is as follows:
+
+```tex
+\newcommand{key}[number of parameters]{value}
+```
+**Note:** If your custom command won't need to take in any parameters (i.e. it's
+just an alias), you may omit the middle portion of the above command.
+
+To access the values in the <img src="assets/n.png"></img>th parameter, we just
+use `#n`.
+
+Here are a few examples of how you might use custom commands:
+```tex
+\newcommand{\R}{\mathbb{R}}     % real numbers
+\newcommand{\eps}{\varepsilon}  % better epsilon
+
+\newcommand{\tuple}[1]{\left\langle #1 \right\rangle} % dynamically-sized tuples
+\newcommand{\set}[1]{\left\{#1\right\}}               % dynamically-sized sets
+```
+
+The latter two commands would be used via `\set{x : x < \frac{1}{2}}` or
+`\tuple{1, x, \frac{1}{2}x^2}`.
+
+Not only do these macros save you time while typing, but also clean up your
+code, making it easier to read through and make edits.
+
+### `\newenvironment` [optional]
+
+Similar to `\newcommand`, the `\newenvironment` allows you to define macros, but
+for `\begin{env}` and `\end{env}` pairs. Say for instance we want to create a
+`problem` environment, that accomplishes something similar to what we had
+before. We could then write
+
+```tex
+\newenvironment{problem}[1]
+  {
+    \ifx &#1& \textbf{Problem. }
+    \else \textbf{Problem #1.} \fi
+  }
+  {
+  }
+```
+
+You don't need to worry too much about the if statement syntax, it just formats
+some spacing depending on whether or not you pass a problem number into it. What
+the `\newenvironment` command does here is run what's in the first set of curly
+braces as `\begin{problem}`, and what's in the second set as `\end{problem}`.
+
+We can then use
+
+```tex
+\begin{problem}{1}
+  Prove that the sum of two odd numbers is even.
+\end{problem}
+```
+to render the same text as we did before!
+
+**Note:** If you want to omit a particular parameter, you *shouldn't* omit the
+curly braces, i.e. you would write `\begin{problem}{}` to omit the problem
+number.
+
+**Note:** While this might not be useful for this particular use case, it comes
+in handy when you need to use and re-use more complex code blocks.
